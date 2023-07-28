@@ -6,6 +6,7 @@ use App\Mail\mailer;
 use App\Models\User;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
@@ -33,5 +34,9 @@ class Kernel extends ConsoleKernel
         $this->load(__DIR__.'/Commands');
 
         require base_path('routes/console.php');
+
+        Artisan::command("mail:send",function(){
+            Mail::to("hafiz.bukhari@hotmail.com")->send(new mailer());
+        });
     }
 }
