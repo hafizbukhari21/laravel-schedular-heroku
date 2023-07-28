@@ -13,10 +13,10 @@ class mailercon extends Controller
 {
     public function send(){
         {
-            // Mail::to("hafiz.bukhari@hotmail.com")->send(new mailer());
-            $user = new User();
-            $user->name = Str::uuid();
-            $user->save();
+            Mail::to("hafiz.bukhari@hotmail.com")->send(new mailer());
+            // $user = new User();
+            // $user->name = Str::uuid();
+            // $user->save();
         }
     }
 }
